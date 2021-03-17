@@ -1,0 +1,14 @@
+{
+    "appPageId": "11144ba3-af80-733b-d386-4339a69121b3",
+    "appPageName": "profilepage",
+    "componentName": "profilepageComponent",
+    "selectorName": "bh-profilepage",
+    "htmlFileName": "profilepage.template.html",
+    "tsFileName": "profilepage.component.ts",
+    "createDate": "2021-03-17T01:46:17.102Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

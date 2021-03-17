@@ -1,0 +1,201 @@
+<div fxLayout="column wrap" class="profile" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <header style="height:32px;background:white"></header>
+  <div fxLayout="column wrap" style="background:#F6F7FB;padding:32px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row " style="background:white" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="border-right:4px solid #F6F7FB" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" style="padding: 16px" fxLayoutGap="16px" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+          <div class="heading">
+            Your Profile</div><img [src]="&apos;https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg&apos;" style="height:200px">
+          <div>
+            Fauzan Naufan</div>
+          <div>
+            Developer</div>
+          <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+              <div style="font-size:24px;font-weight:bold">
+                86</div>
+              <div style="color:gray">
+                posts</div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+              <div style="font-size:24px;font-weight:bold">
+                1,1k</div>
+              <div style="color:gray">
+                messages</div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+              <div style="font-size:24px;font-weight:bold">
+                4,5k</div>
+              <div style="color:gray">
+                members</div>
+            </div>
+          </div><button mat-raised-button class="blue-btn">Upload New Avatar</button><button mat-raised-button>Delete</button>
+        </div>
+        <div fxLayout="column wrap" style="padding: 16px;border-top:4px solid #F6F7FB" fxLayoutGap="16px" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+          <div>
+            Your Slogan</div>
+          <div style="width:70%;font-style:italic;line-height:32px;text-align: center">
+            Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth</div>
+          <mat-icon>format_quote</mat-icon>
+        </div>
+      </div>
+      <div fxLayout="column wrap" style="padding:16px;border-right:4px solid #F6F7FB" fxFlex="35" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div class="heading">
+          Edit Your Personal Settings</div>
+        <form [formGroup]="profileForm" *ngIf="showform" (ngSubmit)="onSubmitProfile()">
+          <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start none" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row " fxLayoutGap="16px" fxLayoutAlign="start baseline" [fxShow]="true" [fxHide]="false">
+              <div style="width:30%;text-align:right">
+                Full Name</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Enter your full name" [required]="true" formControlName="fullName">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row " fxLayoutGap="16px" fxLayoutAlign="start baseline" [fxShow]="true" [fxHide]="false">
+              <div style="width:30%;text-align:right">
+                Title</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Enter your title" [required]="true" formControlName="title">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row " fxLayoutGap="16px" fxLayoutAlign="start baseline" [fxShow]="true" [fxHide]="false">
+              <div style="width:30%;text-align:right">
+                Email</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Enter your email" [required]="true" formControlName="email">
+                <mat-error align="start" *ngIf="profileForm.controls.email?.errors">Email is not valid</mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              Birthday</div>
+            <div fxLayout="row " fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                <mat-select formControlName="dd" placeholder="DD" [required]="false">
+                  <ng-template ngFor let-option [ngForOf]="ddData" let-i="index">
+                    <mat-option [value]="option">{{option}}</mat-option>
+                  </ng-template>
+                </mat-select>
+
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                <mat-select formControlName="mm" placeholder="MM" [required]="false">
+                  <ng-template ngFor let-option [ngForOf]="mmData" let-i="index">
+                    <mat-option [value]="option">{{option}}</mat-option>
+                  </ng-template>
+                </mat-select>
+
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                <mat-select formControlName="yy" placeholder="YY" [required]="false">
+                  <ng-template ngFor let-option [ngForOf]="yyData" let-i="index">
+                    <mat-option [value]="option">{{option}}</mat-option>
+                  </ng-template>
+                </mat-select>
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row " fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <div>
+                  Country</div>
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                  <mat-select formControlName="country" placeholder="Select" [required]="false">
+                    <ng-template ngFor let-option [ngForOf]="countries" let-i="index">
+                      <mat-option [value]="option">{{option}}</mat-option>
+                    </ng-template>
+                  </mat-select>
+
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <div>
+                  State/Province/Region</div>
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput placeholder="enter value" [required]="false" formControlName="state">
+
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row " fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <div>
+                  Postal Code</div>
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput placeholder="enter postal code" [required]="false" formControlName="postalCode">
+
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                <div>
+                  Phone Number</div>
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput placeholder="enter phone number" [required]="false" formControlName="phoneNumber">
+
+                </mat-form-field>
+              </div>
+            </div>
+            <mat-checkbox [required]="false" formControlName="agreeNotif">I agree to receive notifications</mat-checkbox><button mat-button class="blue-btn" type="submit">Update Information</button>
+          </div>
+        </form>
+      </div>
+      <div fxLayout="column wrap" style="padding:16px" fxFlex="35" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div class="heading">
+          Your External Links</div>
+        <form [formGroup]="socialForm" *ngIf="showform" (ngSubmit)="onSubmitSocial()">
+          <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div>
+                Facebook URL:</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Paste your link here" [required]="false" formControlName="facebook">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div>
+                Twitter URL:</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Paste your link here" [required]="false" formControlName="twitter">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div>
+                Blogger URL:</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Paste your link here" [required]="false" formControlName="blogger">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div>
+                Google+ URL:</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Paste your link here" [required]="false" formControlName="google">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div>
+                LinkedIn URL:</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Paste your link here" [required]="false" formControlName="linkedin">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" fxLayoutGap="16px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div>
+                Website URL:</div>
+              <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Paste your link here" [required]="false" formControlName="website">
+
+              </mat-form-field>
+            </div><button mat-button class="blue-btn" type="submit">Save &amp; Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
