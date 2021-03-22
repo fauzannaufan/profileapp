@@ -2,7 +2,12 @@
     "routes": [
         {
             "path": "profile",
-            "component": "profilepageComponent"
+            "component": "profilepageComponent",
+            "canActivate": "NeutrinosAuthGuardService"
+        },
+        {
+            "path": "login",
+            "component": "loginComponent"
         },
         {
             "path": "''",

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import {FormBuilder,Validators} from '@angular/forms'
 import {profileservice} from 'app/sd-services/profileservice'
+import { NeutrinosOAuthClientService } from 'neutrinos-oauth-client';
 
 /*
 Client Service import Example:
@@ -29,11 +30,12 @@ export class profilepageComponent extends NBaseComponent implements OnInit {
     yyData = [];
     countries = ['USA', 'Indonesia', 'India'];
 
-    constructor(public fb:FormBuilder, public service:profileservice) {
+    constructor(public fb:FormBuilder, public service:profileservice, public neutrinosOAuthClientService: NeutrinosOAuthClientService) {
         super();
     }
 
     ngOnInit() {
+        console.log(this.neutrinosOAuthClientService);
         for (let i=1;i<=31;i++) {
             let number = i < 10 ? "0"+i : i+"";
             this.ddData.push(number);
@@ -123,5 +125,9 @@ export class profilepageComponent extends NBaseComponent implements OnInit {
             this.socialForm.value.linkedin,
             this.socialForm.value.website
         ])
+    }
+
+    logout() {
+        this.neutrinosOAuthClientService.logout('login')
     }
 }

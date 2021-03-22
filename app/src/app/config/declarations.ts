@@ -15,6 +15,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-loginComponent
+import { loginComponent } from '../components/loginComponent/login.component';
 //CORE_REFERENCE_IMPORT-profilepageComponent
 import { profilepageComponent } from '../components/profilepageComponent/profilepage.component';
 
@@ -44,6 +46,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
+loginComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-profilepageComponent
 profilepageComponent,
 
@@ -72,5 +76,5 @@ export const appProviders = [
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'profile', component: profilepageComponent},{path: '', redirectTo: 'profile', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'profile', component: profilepageComponent, canActivate: [NeutrinosAuthGuardService]},{path: 'login', component: loginComponent},{path: '', redirectTo: 'profile', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END
