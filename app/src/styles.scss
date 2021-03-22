@@ -25,12 +25,13 @@
     color: white;
 }
 
-.profile .mat-form-field-infix {
+.profile .mat-form-field .mat-form-field-infix {
     width: auto;
     min-width:60px;
+    padding: 0 0 8px 0;
 }
 
-.profile .mat-form-field-wrapper {
+.profile .mat-form-field .mat-form-field-wrapper {
     padding-bottom: 0;
 }
 
@@ -38,12 +39,15 @@
     border-radius:16px;
 }
 
+.profile .mat-checkbox.mat-checkbox-checked .mat-checkbox-background {
+    background-color: green;
+}
+
 .profile .quote {
     font-size:40px;
     width:40px;
     height:40px;
     color:#4d9dee;
-    margin-top:32px;
     transform:rotate(180deg);
 }
 

@@ -1,30 +1,43 @@
-<div fxLayout="column wrap" class="profile" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-  <header style="height:32px;background:white"><button mat-raised-button (click)="logout()">Logout</button></header>
+<header style="padding: 8px; background:white" class="profile">
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false"><img [src]="&apos;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwj_Qk6rZkk4hFq364exwpk6ohdRRU0GXGig&amp;usqp=CAU&apos;" style="height:48px">
+    <div fxLayout="row " fxLayoutGap="16px" fxLayoutAlign="end center" [fxShow]="true" [fxHide]="false">
+      <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput placeholder="Search" [required]="false">
+
+      </mat-form-field><img [src]="&apos;https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg&apos;" style="height:48px">
+      <div>
+        Naufan</div><button mat-mini-fab (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </div>
+</header>
+<div fxLayout="column wrap" class="profile" fxLayoutAlign="start none" [fxShow]="true" [fxHide]="false">
   <div fxLayout="column wrap" style="background:#F6F7FB;padding:32px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="row " style="background:white" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="column wrap" style="border-right:4px solid #F6F7FB" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="padding: 16px" fxLayoutGap="16px" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
           <div class="heading">
-            Your Profile</div><img [src]="&apos;https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg&apos;" style="height:200px">
+            Your Profile</div><img [src]="&apos;https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg&apos;" style="height:150px">
           <div class="bold">
             Fauzan Naufan</div>
           <div>
             Developer</div>
           <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false">
             <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-              <div style="font-size:24px;font-weight:bold">
+              <div style="font-size:20px;font-weight:bold">
                 86</div>
               <div style="color:gray">
                 posts</div>
             </div>
             <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-              <div style="font-size:24px;font-weight:bold">
+              <div style="font-size:20px;font-weight:bold">
                 1,1k</div>
               <div style="color:gray">
                 messages</div>
             </div>
             <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-              <div style="font-size:24px;font-weight:bold">
+              <div style="font-size:20px;font-weight:bold">
                 4,5k</div>
               <div style="color:gray">
                 members</div>
@@ -137,7 +150,7 @@
               </div>
             </div>
             <mat-checkbox style="padding-top:16px;border-top:1px solid #F6F7FB" [required]="false" formControlName="agreeNotif">I agree to receive notifications</mat-checkbox>
-            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top:40px" class="blue-btn" type="submit">Update Information</button></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top:80px" class="blue-btn" type="submit">Update Information</button></div>
           </div>
         </form>
       </div>
@@ -194,10 +207,11 @@
 
               </mat-form-field>
             </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false"><button mat-button class="blue-btn" type="submit">Save &amp; Update</button></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top:40px" class="blue-btn" type="submit">Save &amp; Update</button></div>
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
+<header></header>

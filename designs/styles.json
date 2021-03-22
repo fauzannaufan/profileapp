@@ -3,8 +3,12 @@
         "profile",
         "heading",
         "blue-btn",
+        "mat-form-field",
         "mat-form-field-infix",
         "mat-form-field-wrapper",
+        "mat-checkbox",
+        "mat-checkbox-checked",
+        "mat-checkbox-background",
         "quote",
         "bold"
     ]
