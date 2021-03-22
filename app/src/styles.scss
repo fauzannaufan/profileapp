@@ -3,8 +3,17 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.profile {
+    font-family: Open Sans;
+}
+
 .profile .heading {
+    font-size: 16px;
     color: lightgrey;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #F6F7FB;
 }
 
 .profile > * {
@@ -12,11 +21,32 @@
 }
 
 .profile .blue-btn {
-    background: blue;
+    background: #4d9dee;
     color: white;
 }
 
 .profile .mat-form-field-infix {
     width: auto;
     min-width:60px;
+}
+
+.profile .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+.profile button {
+    border-radius:16px;
+}
+
+.profile .quote {
+    font-size:40px;
+    width:40px;
+    height:40px;
+    color:#4d9dee;
+    margin-top:32px;
+    transform:rotate(180deg);
+}
+
+.bold {
+    font-weight: bold;
 }
